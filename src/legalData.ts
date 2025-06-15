@@ -1,0 +1,261 @@
+export type LegalSection = {
+  title: string;
+  paragraphs?: string[];
+  points?: string[];
+};
+
+export const privacySections: LegalSection[] = [
+  {
+    title: "Who This Policy Applies To",
+    paragraphs: [
+      "This Privacy Policy applies to the ReceiptCircle mobile app, its API services, and this showcase site (collectively, the Service).",
+      "ReceiptCircle is initially offered to users in the United Kingdom and the European Union."
+    ]
+  },
+  {
+    title: "Data You Provide",
+    points: [
+      "Account and profile data: email address, username, avatar, and account identifiers.",
+      "Receipt content: photos you upload, receipt line items, savings/discounts, surcharges, currency, date/time, and participant assignments.",
+      "Social graph data: connection requests, accepted connections, blocked users, and participant names/avatars in shared receipts.",
+      "Support and communications: information you send when contacting support or requesting account/privacy actions."
+    ]
+  },
+  {
+    title: "Data We Collect Automatically",
+    points: [
+      "Account authentication and session information needed to keep you signed in securely.",
+      "Notification delivery data used to send alerts and open the right in-app screen.",
+      "Subscription and billing status from app stores and entitlement providers.",
+      "Device, performance, and crash diagnostics used to monitor reliability and fix issues.",
+      "Usage metrics used to apply feature limits, prevent abuse, and improve the Service."
+    ]
+  },
+  {
+    title: "How Receipt Images And AI Processing Work",
+    points: [
+      "Receipt images are uploaded via short-lived presigned URLs to cloud storage.",
+      "Image URLs are then processed by an AI provider to extract structured receipt details.",
+      "AI output may be inaccurate; users are expected to review and edit parsed data before finalization.",
+      "Do not upload sensitive documents unrelated to receipt splitting."
+    ]
+  },
+  {
+    title: "Why We Process Data",
+    points: [
+      "Provide core account, receipt, and social features.",
+      "Enable collaboration, participant assignment, and finalized split calculations.",
+      "Send transactional notifications such as connection and finalized-receipt alerts.",
+      "Manage subscriptions, premium access, fraud/risk controls, and abuse prevention.",
+      "Maintain reliability, troubleshoot incidents, and improve product performance."
+    ]
+  },
+  {
+    title: "Legal Bases (EEA/UK Users)",
+    points: [
+      "Performance of contract: to operate the Service you request.",
+      "Legitimate interests: security, abuse prevention, diagnostics, and product reliability.",
+      "Consent: where required (for example, notification permission prompts).",
+      "Legal obligations: when required by law, regulation, or lawful process."
+    ]
+  },
+  {
+    title: "How Data Is Shared",
+    points: [
+      "Cloud infrastructure providers used for authentication, database, storage, and push delivery.",
+      "AI provider used to process receipt images into structured receipt data.",
+      "Subscription/billing providers used for entitlement lifecycle events.",
+      "Error-monitoring providers used for diagnostics and incident analysis.",
+      "Other users, when you connect or share/finalize receipts (limited to relevant profile and split details).",
+      "Authorities or counterparties when required by law, legal process, or business transfers."
+    ]
+  },
+  {
+    title: "Cross-Border Transfers",
+    paragraphs: [
+      "Service providers may process data in multiple countries. Where required, appropriate transfer safeguards should be implemented (for example, contractual safeguards and equivalent protections).",
+      "Where required by UK and EU law, international transfers are protected using approved safeguards such as UK IDTA/Addendum and the EU Standard Contractual Clauses, together with supplementary security measures."
+    ]
+  },
+  {
+    title: "Data Retention",
+    points: [
+      "Account/profile and social records are retained while your account is active unless legal/operational needs require longer retention.",
+      "Receipt records, including finalized split data, are retained to provide history and participant access.",
+      "Push tokens/endpoints are updated and replaced as devices change.",
+      "Diagnostic and security logs are retained for a limited period needed for operations and compliance."
+    ]
+  },
+  {
+    title: "Security",
+    points: [
+      "We use technical and organizational safeguards designed to protect personal data.",
+      "Data is encrypted in transit, and access is limited to systems and personnel who need it.",
+      "We monitor the Service for abuse, fraud, and unauthorized access attempts.",
+      "No system is completely secure, so we encourage users to keep devices and account credentials protected."
+    ]
+  },
+  {
+    title: "Your Rights And Choices",
+    points: [
+      "Access, correction, and profile updates through in-app account controls.",
+      "Account deletion request support, including backend account removal workflows.",
+      "Notification controls through device settings and in-app flows.",
+      "For applicable regions: rights to access, deletion, correction, restriction, portability, and objection.",
+      "To exercise rights, contact: hello@receiptcircle.com and include your account email/identifier."
+    ]
+  },
+  {
+    title: "Public Search And Social Visibility",
+    points: [
+      "Availability checks for username/email can be queried for account-setup purposes.",
+      "Connected users may view profile elements needed for social and receipt collaboration.",
+      "Blocking and connection removal features are provided to limit future interaction."
+    ]
+  },
+  {
+    title: "Children",
+    paragraphs: [
+      "The Service is not intended for children under 13 (or higher age where required by local law).",
+      "If you become aware of underage use, contact hello@receiptcircle.com so account data can be reviewed and removed where appropriate."
+    ]
+  },
+  {
+    title: "Policy Updates",
+    paragraphs: [
+      "We may update this Privacy Policy as products, law, or providers change.",
+      "Material changes should be communicated by in-app notice, site notice, or updated effective date."
+    ]
+  },
+  {
+    title: "Contact And Controller Details",
+    paragraphs: [
+      "Data Controller/Operator: ReceiptCircle (independent developer).",
+      "Privacy Contact: hello@receiptcircle.com",
+      "Postal contact details are available on request for verified legal notices where required by law."
+    ]
+  }
+];
+
+export const termsSections: LegalSection[] = [
+  {
+    title: "Acceptance And Scope",
+    paragraphs: [
+      "These Terms and Conditions govern access to and use of ReceiptCircle (app, API, and website materials).",
+      "By creating an account or using the Service, you agree to these Terms and to the Privacy Policy."
+    ]
+  },
+  {
+    title: "Eligibility And Accounts",
+    points: [
+      "You must be legally capable of entering into a binding agreement and meet minimum age requirements in your region.",
+      "You are responsible for account credentials, device access, and all activity under your account.",
+      "Provide accurate account information and keep profile data current."
+    ]
+  },
+  {
+    title: "License And Permitted Use",
+    points: [
+      "You receive a limited, revocable, non-exclusive, non-transferable license to use the Service for personal or internal business receipt-splitting workflows.",
+      "You may not reverse engineer, disrupt, scrape at scale, bypass limits, or use the Service for unlawful activity.",
+      "You may not upload content you do not have rights to process or share."
+    ]
+  },
+  {
+    title: "User Content And Responsibility",
+    points: [
+      "You retain responsibility for uploaded images and receipt content.",
+      "You grant us and our processors the rights necessary to host, process, analyze, and transmit your content to provide the Service.",
+      "You are responsible for verifying parsed receipt output and participant assignments before finalizing."
+    ]
+  },
+  {
+    title: "Social Features",
+    points: [
+      "Connection requests, accepts/declines, blocks, and participant sharing are user-driven actions.",
+      "You agree to use social features respectfully and not harass, impersonate, or misuse other users’ information.",
+      "We may limit, suspend, or remove access to social features for abuse or policy violations."
+    ]
+  },
+  {
+    title: "Subscriptions, Billing, And Premium Access",
+    points: [
+      "Premium features may be sold through in-app purchases and entitlement providers.",
+      "Billing, renewal, cancellation, and refunds are generally governed by the relevant app-store terms.",
+      "Entitlement state may change based on purchase, renewal, expiration, cancellation, transfer, or billing events."
+    ]
+  },
+  {
+    title: "Usage Limits And Feature Changes",
+    points: [
+      "Free-tier limits (for example scan limits) may apply and may change over time.",
+      "We may add, remove, or modify features, APIs, models, and integrations.",
+      "We do not guarantee that any specific feature will remain available indefinitely."
+    ]
+  },
+  {
+    title: "Third-Party Services",
+    points: [
+      "The Service relies on third-party providers for hosting, auth, AI processing, subscription management, and notifications.",
+      "Third-party outages or policy changes may affect availability or behavior.",
+      "Your use of app stores and payment platforms is also subject to their terms."
+    ]
+  },
+  {
+    title: "Intellectual Property",
+    points: [
+      "Service software, branding, and non-user content are owned by the operator or licensors.",
+      "These Terms do not transfer ownership rights to you except for the limited use license above."
+    ]
+  },
+  {
+    title: "Disclaimers",
+    points: [
+      "The Service is provided on an \"as is\" and \"as available\" basis.",
+      "Receipt parsing and AI-generated output can be incomplete, delayed, or incorrect.",
+      "You are responsible for validating totals, tax/surcharge treatment, and participant allocation."
+    ]
+  },
+  {
+    title: "Limitation Of Liability",
+    points: [
+      "To the maximum extent permitted by law, the operator is not liable for indirect, incidental, consequential, special, or punitive damages.",
+      "Total liability for claims related to the Service is limited to amounts paid by you for the Service during the 12-month period before the claim, unless local law requires otherwise."
+    ]
+  },
+  {
+    title: "Indemnity",
+    paragraphs: [
+      "You agree to indemnify and hold harmless the operator and affiliates from claims arising from your misuse of the Service, violation of these Terms, or infringement of third-party rights."
+    ]
+  },
+  {
+    title: "Suspension And Termination",
+    points: [
+      "We may suspend or terminate access for policy violations, legal requirements, fraud/risk concerns, or abusive behavior.",
+      "You may stop using the Service at any time and request account deletion through available controls."
+    ]
+  },
+  {
+    title: "Governing Law And Disputes",
+    paragraphs: [
+      "These Terms are governed by the laws of England and Wales, excluding conflict-of-law rules.",
+      "Disputes will be resolved in the courts of London, England, unless mandatory consumer law in your country of residence requires otherwise."
+    ]
+  },
+  {
+    title: "Changes To Terms",
+    paragraphs: [
+      "We may update these Terms over time. Continued use after updates means you accept the revised Terms.",
+      "If required by law, we will provide additional notice for material changes."
+    ]
+  },
+  {
+    title: "Contact",
+    paragraphs: [
+      "Legal Notices: hello@receiptcircle.com",
+      "Operator: ReceiptCircle (independent developer).",
+      "Postal contact details are available on request for verified legal notices where required by law."
+    ]
+  }
+];
