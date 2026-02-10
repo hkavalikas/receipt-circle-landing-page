@@ -26,7 +26,7 @@ export const privacySections: LegalSection[] = [
     points: [
       "Account authentication and session information needed to keep you signed in securely.",
       "Notification delivery data used to send alerts and open the right in-app screen.",
-      "Subscription and billing status from app stores and entitlement providers.",
+      "Rewarded-ad and anti-fraud events used to grant scan credits and prevent abuse.",
       "Device, performance, and crash diagnostics used to monitor reliability and fix issues.",
       "Usage metrics used to apply feature limits, prevent abuse, and improve the Service."
     ]
@@ -46,7 +46,7 @@ export const privacySections: LegalSection[] = [
       "Provide core account, receipt, and social features.",
       "Enable collaboration, participant assignment, and finalized split calculations.",
       "Send transactional notifications such as connection and finalized-receipt alerts.",
-      "Manage subscriptions, premium access, fraud/risk controls, and abuse prevention.",
+      "Manage feature limits, rewarded credits, fraud/risk controls, and abuse prevention.",
       "Maintain reliability, troubleshoot incidents, and improve product performance."
     ]
   },
@@ -62,12 +62,19 @@ export const privacySections: LegalSection[] = [
   {
     title: "How Data Is Shared",
     points: [
-      "Cloud infrastructure providers used for authentication, database, storage, and push delivery.",
-      "AI provider used to process receipt images into structured receipt data.",
-      "Subscription/billing providers used for entitlement lifecycle events.",
-      "Error-monitoring providers used for diagnostics and incident analysis.",
+      "Cloud infrastructure providers (for example AWS services) used for authentication, database, storage, and push delivery.",
+      "AI provider (OpenAI) used to process receipt images into structured receipt data.",
+      "Advertising provider (Google AdMob) used for rewarded ads and reward verification.",
+      "Error-monitoring provider (Sentry) used for diagnostics and incident analysis.",
       "Other users, when you connect or share/finalize receipts (limited to relevant profile and split details).",
       "Authorities or counterparties when required by law, legal process, or business transfers."
+    ]
+  },
+  {
+    title: "Selling Or Sharing Personal Data",
+    paragraphs: [
+      "ReceiptCircle does not sell your personal data for money.",
+      "We only share data with service providers and other users as described in this policy to operate the Service."
     ]
   },
   {
@@ -99,7 +106,7 @@ export const privacySections: LegalSection[] = [
     title: "Your Rights And Choices",
     points: [
       "Access, correction, and profile updates through in-app account controls.",
-      "Account deletion request support, including backend account removal workflows.",
+      "Account deletion through in-app controls, with backend account removal workflows.",
       "Notification controls through device settings and in-app flows.",
       "For applicable regions: rights to access, deletion, correction, restriction, portability, and objection.",
       "To exercise rights, contact: hello@receiptcircle.com and include your account email/identifier."
@@ -180,9 +187,9 @@ export const termsSections: LegalSection[] = [
   {
     title: "Subscriptions, Billing, And Premium Access",
     points: [
-      "Premium features may be sold through in-app purchases and entitlement providers.",
-      "Billing, renewal, cancellation, and refunds are generally governed by the relevant app-store terms.",
-      "Entitlement state may change based on purchase, renewal, expiration, cancellation, transfer, or billing events."
+      "ReceiptCircle does not currently offer paid subscriptions or in-app purchases.",
+      "If paid offerings are introduced later, these terms and relevant in-app disclosures will be updated before launch.",
+      "Any future app-store billing, cancellation, and refund handling will be governed by the relevant app-store terms."
     ]
   },
   {
@@ -196,7 +203,7 @@ export const termsSections: LegalSection[] = [
   {
     title: "Third-Party Services",
     points: [
-      "The Service relies on third-party providers for hosting, auth, AI processing, subscription management, and notifications.",
+      "The Service relies on third-party providers for hosting, authentication, AI processing, notifications, and rewarded ads.",
       "Third-party outages or policy changes may affect availability or behavior.",
       "Your use of app stores and payment platforms is also subject to their terms."
     ]

@@ -67,7 +67,7 @@ function LegalPage({ kind, title, subtitle, sections }: LegalPageProps) {
       <section className="section legal">
         <div className="section-head">
           <h2>{title}</h2>
-          <p>Last updated: February 7, 2026</p>
+          <p>Last updated: February 10, 2026</p>
         </div>
         <LegalSectionCards sections={sections} />
       </section>
