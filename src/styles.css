@@ -102,6 +102,69 @@ body {
   flex-wrap: wrap;
 }
 
+.android-open-prompt {
+  margin: 0 auto 0.95rem;
+  max-width: 760px;
+  position: sticky;
+  top: 0.55rem;
+  z-index: 30;
+  border: 1px solid #cae0ff;
+  background: linear-gradient(120deg, #f0f7ff, #f8fbff);
+  border-radius: 0.92rem;
+  box-shadow: 0 12px 24px #0f1f3a1a;
+  padding: 0.68rem 0.78rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.78rem;
+  animation: fadeInUp 220ms ease-out both;
+}
+
+.android-open-prompt-copy strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #1b2a45;
+}
+
+.android-open-prompt-copy p {
+  margin: 0.16rem 0 0;
+  font-size: 0.8rem;
+  color: #5b6883;
+}
+
+.android-open-prompt-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.46rem;
+}
+
+.android-open-prompt-btn {
+  border: 1px solid #c9d7ef;
+  background: #ffffff;
+  color: #182844;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.34rem 0.68rem;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.android-open-prompt-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 14px #15284317;
+}
+
+.android-open-prompt-btn-primary {
+  border-color: #167e73;
+  background: #10b8a6;
+  color: #ffffff;
+}
+
+.android-open-prompt-btn-ghost {
+  background: #ffffffbf;
+}
+
 .store-badge {
   border: 1px solid #d6dce6;
   background: #ffffff;
@@ -572,6 +635,17 @@ body {
 
   .legal-card ul {
     padding-left: 1rem;
+  }
+
+  .android-open-prompt {
+    top: 0.4rem;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .android-open-prompt-actions {
+    width: 100%;
+    justify-content: flex-end;
   }
 }
 

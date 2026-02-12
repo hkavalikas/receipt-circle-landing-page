@@ -108,7 +108,7 @@ const PLAY_STORE_URL = `https://play.google.com/store/apps/details?id=${ANDROID_
 const ANDROID_INTENT_URL = `intent://connections#Intent;scheme=receiptcircle;package=${ANDROID_PACKAGE_NAME};S.browser_fallback_url=${encodeURIComponent(
   PLAY_STORE_URL
 )};end`;
-const ANDROID_INTENT_ATTEMPT_KEY = "rc_android_intent_attempted";
+const ANDROID_OPEN_PROMPT_DISMISSED_KEY = "rc_android_open_prompt_dismissed";
 
 function PhonePreview({ story }: { story: ScreenStory }) {
   const [missing, setMissing] = useState(false);
@@ -140,6 +140,7 @@ function PhonePreview({ story }: { story: ScreenStory }) {
 function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPaused, setIsAutoPaused] = useState(false);
+  const [showAndroidOpenPrompt, setShowAndroidOpenPrompt] = useState(false);
   const activeStory = stories[activeIndex] ?? stories[0];
 
   const openAndroidAppOrStore = () => {
@@ -152,6 +153,18 @@ function HomePage() {
     window.location.href = PLAY_STORE_URL;
   };
 
+  const dismissAndroidOpenPrompt = () => {
+    if (typeof window !== "undefined") {
+      window.sessionStorage.setItem(ANDROID_OPEN_PROMPT_DISMISSED_KEY, "1");
+    }
+    setShowAndroidOpenPrompt(false);
+  };
+
+  const openFromAndroidPrompt = () => {
+    dismissAndroidOpenPrompt();
+    openAndroidAppOrStore();
+  };
+
   useEffect(() => {
     if (typeof window === "undefined") return;
     const userAgent = window.navigator.userAgent ?? "";
@@ -160,11 +173,9 @@ function HomePage() {
       window.location.hostname
     );
     if (!isAndroid || !isReceiptCircleSite) return;
-    if (window.sessionStorage.getItem(ANDROID_INTENT_ATTEMPT_KEY) === "1") {
-      return;
-    }
-    window.sessionStorage.setItem(ANDROID_INTENT_ATTEMPT_KEY, "1");
-    window.location.href = ANDROID_INTENT_URL;
+    const wasDismissed =
+      window.sessionStorage.getItem(ANDROID_OPEN_PROMPT_DISMISSED_KEY) === "1";
+    setShowAndroidOpenPrompt(!wasDismissed);
   }, []);
 
   useEffect(() => {
@@ -177,6 +188,30 @@ function HomePage() {
 
   return (
     <main className="page" id="top">
+      {showAndroidOpenPrompt ? (
+        <div className="android-open-prompt" role="dialog" aria-label="Open app prompt">
+          <div className="android-open-prompt-copy">
+            <strong>Open in ReceiptCircle beta?</strong>
+            <p>Use the app for the best experience, or continue on the web.</p>
+          </div>
+          <div className="android-open-prompt-actions">
+            <button
+              type="button"
+              className="android-open-prompt-btn android-open-prompt-btn-ghost"
+              onClick={dismissAndroidOpenPrompt}
+            >
+              Not now
+            </button>
+            <button
+              type="button"
+              className="android-open-prompt-btn android-open-prompt-btn-primary"
+              onClick={openFromAndroidPrompt}
+            >
+              Open app
+            </button>
+          </div>
+        </div>
+      ) : null}
       <header className="hero">
         <img
           src="receiptcircle-icon.svg"
