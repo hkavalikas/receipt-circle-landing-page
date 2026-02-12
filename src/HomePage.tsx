@@ -103,6 +103,13 @@ const stories: ScreenStory[] = [
   }
 ];
 
+const ANDROID_PACKAGE_NAME = "com.receiptcircle.www";
+const PLAY_STORE_URL = `https://play.google.com/store/apps/details?id=${ANDROID_PACKAGE_NAME}`;
+const ANDROID_INTENT_URL = `intent://connections#Intent;scheme=receiptcircle;package=${ANDROID_PACKAGE_NAME};S.browser_fallback_url=${encodeURIComponent(
+  PLAY_STORE_URL
+)};end`;
+const ANDROID_INTENT_ATTEMPT_KEY = "rc_android_intent_attempted";
+
 function PhonePreview({ story }: { story: ScreenStory }) {
   const [missing, setMissing] = useState(false);
 
@@ -134,6 +141,31 @@ function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPaused, setIsAutoPaused] = useState(false);
   const activeStory = stories[activeIndex] ?? stories[0];
+
+  const openAndroidAppOrStore = () => {
+    if (typeof window === "undefined") return;
+    const userAgent = window.navigator.userAgent ?? "";
+    if (/android/i.test(userAgent)) {
+      window.location.href = ANDROID_INTENT_URL;
+      return;
+    }
+    window.location.href = PLAY_STORE_URL;
+  };
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const userAgent = window.navigator.userAgent ?? "";
+    const isAndroid = /android/i.test(userAgent);
+    const isReceiptCircleSite = /(^|\.)receiptcircle\.com$/i.test(
+      window.location.hostname
+    );
+    if (!isAndroid || !isReceiptCircleSite) return;
+    if (window.sessionStorage.getItem(ANDROID_INTENT_ATTEMPT_KEY) === "1") {
+      return;
+    }
+    window.sessionStorage.setItem(ANDROID_INTENT_ATTEMPT_KEY, "1");
+    window.location.href = ANDROID_INTENT_URL;
+  }, []);
 
   useEffect(() => {
     if (isAutoPaused) return;
@@ -191,16 +223,15 @@ function HomePage() {
             <button
               type="button"
               className="store-badge"
-              disabled
-              aria-disabled="true"
-              title="Play Store listing will be available when the app goes live."
+              title="Open ReceiptCircle in app or get it on Google Play."
+              onClick={openAndroidAppOrStore}
             >
               <svg className="store-icon-font" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 3.71v16.58a.7 .7 0 0 0 1.05 .606l14.622 -8.42a.55 .55 0 0 0 0 -.953l-14.622 -8.419a.7 .7 0 0 0 -1.05 .607l0 -.001" /><path d="M15 9l-10.5 11.5" /><path d="M4.5 3.5l10.5 11.5" /></svg>
               <span className="store-badge-copy">
                 <small>Android</small>
                 <strong>Google Play</strong>
               </span>
-              <em>Coming Soon</em>
+              <em>Open</em>
             </button>
           </div>
         </div>
