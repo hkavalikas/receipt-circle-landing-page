@@ -191,8 +191,8 @@ function HomePage() {
       {showAndroidOpenPrompt ? (
         <div className="android-open-prompt" role="dialog" aria-label="Open app prompt">
           <div className="android-open-prompt-copy">
-            <strong>Open in ReceiptCircle beta?</strong>
-            <p>Use the app for the best experience, or continue on the web.</p>
+            <strong>Open ReceiptCircle on the Play Store?</strong>
+            <p>Get redirected to the Play Store or open the app.</p>
           </div>
           <div className="android-open-prompt-actions">
             <button
