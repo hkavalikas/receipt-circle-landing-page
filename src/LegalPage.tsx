@@ -7,11 +7,23 @@ type LegalPageProps = {
   sections: LegalSection[];
 };
 
+function sectionSlug(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 function LegalSectionCards({ sections }: { sections: LegalSection[] }) {
   return (
     <div className="legal-grid">
       {sections.map((section, index) => (
-        <article className="legal-card" key={section.title}>
+        <article
+          className="legal-card"
+          key={section.title}
+          id={section.id ?? sectionSlug(section.title)}
+        >
           <h3>
             {index + 1}. {section.title}
           </h3>
@@ -67,7 +79,7 @@ function LegalPage({ kind, title, subtitle, sections }: LegalPageProps) {
       <section className="section legal">
         <div className="section-head">
           <h2>{title}</h2>
-          <p>Last updated: February 10, 2026</p>
+          <p>Last updated: February 12, 2026</p>
         </div>
         <LegalSectionCards sections={sections} />
       </section>

@@ -1,4 +1,5 @@
 export type LegalSection = {
+  id?: string;
   title: string;
   paragraphs?: string[];
   points?: string[];
@@ -91,6 +92,16 @@ export const privacySections: LegalSection[] = [
       "Receipt records, including finalized split data, are retained to provide history and participant access.",
       "Push tokens/endpoints are updated and replaced as devices change.",
       "Diagnostic and security logs are retained for a limited period needed for operations and compliance."
+    ]
+  },
+  {
+    id: "account-deletion",
+    title: "Account Deletion Requests",
+    points: [
+      "You can delete your account directly in the app: Profile/Settings -> Delete account.",
+      "If you cannot access the app, email hello@receiptcircle.com with subject 'Account Deletion Request - ReceiptCircle' from your account email.",
+      "Deletion removes account/profile data, social graph data, receipt images, parsed receipt/split records, and push token associations from active systems.",
+      "Security, anti-fraud, and operational logs may be retained for up to 30 days; legally required records may be retained for longer where law requires."
     ]
   },
   {
