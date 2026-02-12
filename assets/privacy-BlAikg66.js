@@ -1,0 +1,1 @@
+import{c as e,j as t,R as c}from"./styles-DIpWo3ub.js";import{L as o,p as s}from"./legalData-aDNy7ymc.js";e.createRoot(document.getElementById("root")).render(t.jsx(c.StrictMode,{children:t.jsx(o,{kind:"privacy",title:"Privacy Policy",subtitle:"How ReceiptCircle collects, uses, and protects data.",sections:s})}));
