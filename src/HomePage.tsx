@@ -105,7 +105,7 @@ const stories: ScreenStory[] = [
 
 const ANDROID_PACKAGE_NAME = "com.receiptcircle.www";
 const PLAY_STORE_URL = `https://play.google.com/store/apps/details?id=${ANDROID_PACKAGE_NAME}`;
-const ANDROID_INTENT_URL = `intent://connections#Intent;scheme=receiptcircle;package=${ANDROID_PACKAGE_NAME};S.browser_fallback_url=${encodeURIComponent(
+const ANDROID_INTENT_URL = `intent://open#Intent;scheme=receiptcircle;package=${ANDROID_PACKAGE_NAME};S.browser_fallback_url=${encodeURIComponent(
   PLAY_STORE_URL
 )};end`;
 const ANDROID_OPEN_PROMPT_DISMISSED_KEY = "rc_android_open_prompt_dismissed";
