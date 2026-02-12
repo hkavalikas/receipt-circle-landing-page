@@ -1,0 +1,1 @@
+import{c as e,j as t,R as s}from"./styles-Bjb2LTWd.js";import{L as i,t as o}from"./legalData-DIy1CwGM.js";e.createRoot(document.getElementById("root")).render(t.jsx(s.StrictMode,{children:t.jsx(i,{kind:"terms",title:"Terms & Conditions",subtitle:"Rules for use, subscriptions, liabilities, and service limits.",sections:o})}));
