@@ -114,11 +114,19 @@ body {
   justify-content: space-between;
   gap: 0.62rem;
   box-shadow: 0 8px 16px #1528430f;
-  cursor: not-allowed;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  cursor: pointer;
 }
 
 .store-badge:disabled {
   opacity: 1;
+  cursor: not-allowed;
+}
+
+.store-badge:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px #1528431a;
+  border-color: #c6cfdd;
 }
 
 .store-icon-font {

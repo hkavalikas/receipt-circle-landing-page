@@ -222,7 +222,7 @@ function HomePage() {
             </button>
             <button
               type="button"
-              className="store-badge"
+              className="store-badge store-badge-active"
               title="Open ReceiptCircle in app or get it on Google Play."
               onClick={openAndroidAppOrStore}
             >
@@ -231,7 +231,7 @@ function HomePage() {
                 <small>Android</small>
                 <strong>Google Play</strong>
               </span>
-              <em>Open</em>
+              <em>Beta</em>
             </button>
           </div>
         </div>
