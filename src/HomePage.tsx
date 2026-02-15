@@ -224,7 +224,7 @@ function HomePage() {
         <p className="eyebrow">ReceiptCircle</p>
         <h1>Scan receipts and split bills.</h1>
         <p className="lead">
-          Split group bills faster, with less back-and-forth.
+          Receipt Circle makes splitting group bills faster, with less back-and-forth.
         </p>
 
         <div className="link-list">
